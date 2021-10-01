@@ -4,7 +4,11 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/marco/AndroidStudioProjects/Livros/app/src/main/res/layout/activity_livro.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/marco/AndroidStudioProjects/Livros/app/src/main/res/layout/activity_livros2.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/marco/AndroidStudioProjects/Livros/app/src/main/res/layout/activity_main.xml" value="0.22" />
+        <entry key="..\:/Users/marco/AndroidStudioProjects/Livros/app/src/main/res/layout/layout_livro.xml" value="0.25" />
+        <entry key="..\:/Users/marco/AndroidStudioProjects/Livros/app/src/main/res/menu/context_manu_main.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/marco/AndroidStudioProjects/Livros/app/src/main/res/menu/menu_main.xml" value="0.20416666666666666" />
       </map>
     </option>
   </component>
