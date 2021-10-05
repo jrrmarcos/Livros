@@ -16,6 +16,8 @@ public class LivroActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        activityLivroBinding = ActivityLivroBinding.inflate(getLayoutInflater());
+
         setContentView(activityLivroBinding.getRoot());
 
         activityLivroBinding.salvarBt.setOnClickListener(
@@ -34,7 +36,7 @@ public class LivroActivity extends AppCompatActivity {
 
                    //Se foi edição, devolver posição também
                     if(posicao!=-1){
-                        resultadoIntent.putExtra(MainActivity.EXTRA_LIVRO, livro);
+                        resultadoIntent.putExtra(MainActivity.EXTRA_POSICAO, posicao);
                     }
 
                    setResult(RESULT_OK, resultadoIntent);
@@ -50,8 +52,8 @@ public class LivroActivity extends AppCompatActivity {
             activityLivroBinding.isbnEt.setText(livro.getIsbn());
             activityLivroBinding.primeiroAutorEt.setText(livro.getPrimeiroAutor());
             activityLivroBinding.editoraEt.setText(livro.getEditora());
-            activityLivroBinding.edicaoEt.setText(livro.getEdicao());
-            activityLivroBinding.paginasEt.setText(livro.getPaginas());
+            activityLivroBinding.edicaoEt.setText(Integer.toString(livro.getEdicao()));
+            activityLivroBinding.paginasEt.setText(Integer.toString(livro.getPaginas()));
 
             if(posicao==-1){
                 for (int i = 0; i < activityLivroBinding.getRoot().getChildCount(); i++){

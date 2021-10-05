@@ -57,9 +57,9 @@ class MainActivity : AppCompatActivity() {
 
         livroActivityResultLauncher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) {resultado ->
             if (resultado.resultCode == RESULT_OK) {
-                val livro = resultado.data?.getParcelableExtra<Livro>(EXTRA_LIVRO)?.apply {
+                resultado.data?.getParcelableExtra<Livro>(EXTRA_LIVRO)?.apply {
                     livrosList.add(this)
-                    //livrosAdapter.notifyDataSetChanged(this)
+                    livrosAdapter.notifyDataSetChanged()
                     //livrosAdapter.add(this)
                 }
             }
