@@ -93,16 +93,19 @@ class LivroSqlite(contexto: Context): LivroDAO {
         val livroCursor = livrosBd.rawQuery(livroQuery, null)
 
         while (livroCursor.moveToNext()) {
+
             with(livroCursor) {
-                Livro (
-                    getString(getColumnIndexOrThrow(TABELA_LIVRO)),
+               listaLivros.add (Livro (
+                    getString(getColumnIndexOrThrow(COLUNA_TITULO)),
                     getString(getColumnIndexOrThrow(COLUNA_ISBN)),
                     getString(getColumnIndexOrThrow(COLUNA_PRIMEIRO_AUTOR)),
                     getString(getColumnIndexOrThrow(COLUNA_EDITORA)),
                     getInt(getColumnIndexOrThrow(COLUNA_EDICAO)),
                     getInt(getColumnIndexOrThrow(COLUNA_PAGINAS))
-                )
+                ))
             }
+
+
         }
         return listaLivros
     }
