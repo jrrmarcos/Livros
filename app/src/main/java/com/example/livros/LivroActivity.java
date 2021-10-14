@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.example.livros.databinding.ActivityLivroBinding;
+import com.example.livros.model.Livro;
 
 public class LivroActivity extends AppCompatActivity {
     private ActivityLivroBinding activityLivroBinding;
@@ -48,6 +49,7 @@ public class LivroActivity extends AppCompatActivity {
         posicao = getIntent().getIntExtra(MainActivity.EXTRA_POSICAO, -1);
         livro = getIntent().getParcelableExtra(MainActivity.EXTRA_LIVRO);
         if(livro!=null){
+            activityLivroBinding.tituloEt.setEnabled(false);
             activityLivroBinding.tituloEt.setText(livro.getTitulo());
             activityLivroBinding.isbnEt.setText(livro.getIsbn());
             activityLivroBinding.primeiroAutorEt.setText(livro.getPrimeiroAutor());
@@ -59,12 +61,6 @@ public class LivroActivity extends AppCompatActivity {
                 for (int i = 0; i < activityLivroBinding.getRoot().getChildCount(); i++){
                     activityLivroBinding.getRoot().getChildAt(i).setEnabled(false);
                 }
-                activityLivroBinding.tituloEt.setEnabled(false);
-                activityLivroBinding.isbnEt.setEnabled(false);
-                activityLivroBinding.primeiroAutorEt.setEnabled(false);
-                activityLivroBinding.editoraEt.setEnabled(false);
-                activityLivroBinding.edicaoEt.setEnabled(false);
-                activityLivroBinding.paginasEt.setEnabled(false);
                 activityLivroBinding.salvarBt.setVisibility(View.GONE);
             }
         }

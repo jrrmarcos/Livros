@@ -1,13 +1,12 @@
 package com.example.livros.adapter
 
-import android.text.Layout
 import android.view.*
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.example.livros.Livro
 import com.example.livros.OnLivroClickListener
 import com.example.livros.R
 import com.example.livros.databinding.LayoutLivroBinding
+import com.example.livros.model.Livro
 
 class LivrosRvAdapter(
     private val onLivroClickListener: OnLivroClickListener,

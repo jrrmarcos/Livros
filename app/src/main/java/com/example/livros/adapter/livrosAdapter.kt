@@ -7,9 +7,8 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import android.widget.TextView
-import com.example.livros.Livro
-import com.example.livros.R
 import com.example.livros.databinding.LayoutLivroBinding
+import com.example.livros.model.Livro
 
 class livrosAdapter(
     val contexto: Context,
