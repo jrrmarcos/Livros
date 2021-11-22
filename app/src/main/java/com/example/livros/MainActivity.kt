@@ -92,7 +92,9 @@ class MainActivity : AppCompatActivity(), OnLivroClickListener {
         }
     }
 
+    /*
     override fun onOptionsItemSelected(item: MenuItem): Boolean  = when (item.itemId) {
+
         R.id.adicionarLivroMi -> {
             livroActivityResultLauncher.launch(Intent(this, LivroActivity::class.java))
             true
@@ -100,7 +102,7 @@ class MainActivity : AppCompatActivity(), OnLivroClickListener {
             false;
         }
     }
-
+*/
     override fun onContextItemSelected(item: MenuItem): Boolean {
        // val posicao = (item.menuInfo as AdapterView.AdapterContextMenuInfo).position
         val posicao = livrosAdapter.posicao
@@ -148,4 +150,29 @@ class MainActivity : AppCompatActivity(), OnLivroClickListener {
         startActivity(consultarLivroIntent)
     }
 
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.menu_main, menu)
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean  = when (item.itemId) {
+        R.id.atualizarMi -> {
+            livrosAdapter.notifyDataSetChanged()
+            true
+        }
+        R.id.sairMi -> {
+            AutenticacaoFirebase.firebaseAuth.signOut()
+            finish()
+            true
+        }else ->  {
+            false;
+        }
+    }
+
+    override fun onStart() {
+        super.onStart()
+        if(AutenticacaoFirebase.firebaseAuth.currentUser==null){
+            finish()
+        }
+    }
 }

@@ -3,10 +3,12 @@ package com.example.livros.controller
 import com.example.livros.MainActivity
 import com.example.livros.model.Livro
 import com.example.livros.model.LivroDAO
+import com.example.livros.model.LivroFirebase
 import com.example.livros.model.LivroSqlite
 
 class LivroController(mainActivity: MainActivity) {
-    private val livroDAO: LivroDAO = LivroSqlite(mainActivity)
+    //private val livroDAO: LivroDAO = LivroSqlite(mainActivity)
+    private val livroDAO: LivroDAO = LivroFirebase()
 
     fun inserirLivro(livro: Livro) = livroDAO.criarLivro(livro)
     fun buscarLivro(titulo: String) = livroDAO.recuperarLivro(titulo)
